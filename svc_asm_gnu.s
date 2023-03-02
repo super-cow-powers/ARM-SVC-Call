@@ -8,18 +8,8 @@
 	//Export SVC Handler
 	.global SVC_Handler
 	// Import SVC routines
-	.global _svc_OS_enable_systick
-	.global _svc_OS_addTask
-	.global _svc_OS_task_exit
-	.global _svc_OS_yield
-	.global _svc_OS_schedule
-	.global _svc_SCH_wait
-	.global _svc_SCH_notify
-	.global _svc_SCH_sleep
-	.global _svc_usart_acq
-	.global _svc_usart_rel
-	.global _svc_swrst
-	.global _svc_tst_num
+	.global __YOUR_SVC_FN
+	.global __YOUR_OTHER_SVC_FN
 
 	.type  SVC_Handler, %function
 SVC_Handler:
@@ -48,17 +38,7 @@ SVC_Handler:
 	.balign 8
 	.type  SVC_tableStart, %object
 SVC_tableStart:	
-	.word _svc_OS_enable_systick
-	.word _svc_OS_addTask
-	.word _svc_OS_task_exit
-	.word _svc_OS_yield
-	.word _svc_OS_schedule
-	.word _svc_SCH_wait
-	.word _svc_SCH_notify
-	.word _svc_SCH_sleep
-	.word _svc_usart_acq
-	.word _svc_usart_rel
-	.word _svc_swrst
-	.word _svc_tst_num
+	.word __YOUR_SVC_FN
+	.word __YOUR_OTHER_SVC_FN
 SVC_tableEnd:	
 
